@@ -10,11 +10,18 @@ public class ATM {
 	
 	public void openAccount(int accountNum)
 	{
-		accounts.put(accountNum,0.0);
+		if (!accounts.containsKey(accountNum))
+		{
+			accounts.put(accountNum,0.0);
+		}
+		
 	}
 	public void openAccount(int accountNum, double initialDeposit)
 	{
-		accounts.put(accountNum, initialDeposit);
+		if (!accounts.containsKey(accountNum))
+		{
+			accounts.put(accountNum, initialDeposit);
+		}
 	}
 	public void closeAccount(int accountID)
 	{
