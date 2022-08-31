@@ -34,7 +34,8 @@ public class ATM {
 		//check account id, if doesnt exist return 0.0
 		if (accounts.containsKey(accountID))
 		{
-			return accounts.get(accountID);
+			return Math.round(accounts.get(accountID) * 10000) / 10000.0;
+	
 		}
 		else
 		{
@@ -43,7 +44,7 @@ public class ATM {
 	}
 	public boolean depositMoney(int accountID, double amount)
 	{
-		if (accounts.containsKey(accountID))
+		if (accounts.containsKey(accountID) && amount >= 0)
 		{
 			accounts.put(accountID, accounts.get(accountID) + amount);
 			return true;
@@ -55,7 +56,11 @@ public class ATM {
 	}
 	public boolean withdrawMoney(int accountID, double amount)
 	{	
-		if (accounts.containsKey(accountID) && checkBalance(accountID) >= amount)
+		if(amount < 0)
+		{
+			return false;
+		}
+		else if (accounts.containsKey(accountID) && checkBalance(accountID) >= amount)
 		{
 		accounts.put(accountID, accounts.get(accountID) - amount);
 		return true;
