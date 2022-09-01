@@ -35,11 +35,12 @@ public class ATMTester {
 		System.out.println(chase.checkBalance(00001)); // Should be 667.23
 		System.out.println(chase.checkBalance(01337)); // Should be 0.0
 		System.out.println(chase.checkBalance(21504)); // Should be 0.0
-		System.out.println(chase.checkBalance(00002));
+		//System.out.println(chase.checkBalance(00002));
 		// Test other issues
 		chase.withdrawMoney(00002, 2020.2);
 		System.out.println(chase.checkBalance(00002)); // Should be 634.1 and 
 		//not a fraction more!
+		
 
 	}
 

@@ -70,6 +70,14 @@ public class ATM {
 		}
 	
 	}
+	public void printAccounts()
+	{
+		for (Integer name: accounts.keySet()) {
+		    String key = name.toString();
+		    String value = accounts.get(name).toString();
+		    System.out.println(key + " " + value);
+		}
+	}
 	
 	
 }
